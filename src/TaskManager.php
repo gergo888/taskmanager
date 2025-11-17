@@ -6,7 +6,7 @@ use Carbon\Carbon;
 
 class TaskManager
 {
-    private $tasks = [];
+    private array $tasks = [];
 
     public function addTask($title, $description, $priority): int
     {

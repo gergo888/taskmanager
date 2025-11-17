@@ -4,17 +4,12 @@
 
 use TaskManager\Task;
 use TaskManager\TaskManager;
-
+use function TaskManager\displayStatistics;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 $taskManager = new TaskManager();
 
-function showStatistics($taskManager): void
-{
-    $allTasks = $taskManager->getAllTasks();
-
-}
 
 function executeCommand(int $input, TaskManager $taskManager): void 
 {
@@ -55,7 +50,7 @@ function executeCommand(int $input, TaskManager $taskManager): void
             $taskManager->removeTask($inputId);
             break;
         case 8:
-            showStatistics($taskManager);
+            displayStatistics($taskManager);
             break;
     }
 }
